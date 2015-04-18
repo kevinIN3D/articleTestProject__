@@ -1,0 +1,54 @@
+<!-- GIVE ALL OBJECTS A SPECIFIC 'ID' HERE, WILL IMPLEMENT BOOTSTRAP AFTER ITS STYLED, THEN CONVERT IT INTO A GRID SYSTEM FOR RESPONSIVE.  EASYokNP!   -->
+<!DOCTYPE html>
+{% extends "articles/home.html" %}
+  {% block extrahead %}
+      
+  <head>
+    <title>Django Sports - {{ article.article_title }}</title>
+    <link rel="stylesheet" type="text/css" href="/static/articles/css/custom/articleStyle.css" />
+</head>
+
+
+{% endblock extrahead %}
+    
+  
+
+
+{% block content %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron container">
+      	<div class = "col-sm-12" id="articleTitle">
+			<h1><center>{{article.article_title}}</center></h1>
+			<div class="col-sm-12" id="articleHero">
+				<center><img class="img-thumbnail" src="{{ article.article_hero_image.url }}" /></center>
+			</div>
+      	</div>
+    </div>
+
+    <div class="container" id="articleBodyContainer">
+    	<div class="col-sm-12" id = "articleInfo">
+        	<p><small>Author: {{article.article_author}}</small>&emsp;&emsp;
+			<small>Published: {{article.article_pub_date}}</small></p>
+		</div>
+
+		<!-- Displays a GRID at 8/4 split if an optional image exists, ELSE displays content in 12 grid -->
+		{% if article.article_optional_image %}
+			<div class = "col-sm-12" id="articleContent">
+				<img class="img-rounded" id="articleOptionalImg" src="{{article.article_optional_image.url }}"/>
+				<p>{{article.article_body}}</p>
+
+			</div>
+		{% else %}
+	<!-- Picture is hidden or unavailable -->
+			<div class = "col-sm-12" id="articleContent">
+				<p>{{article.article_body}}</p>
+			</div>
+		{% endif %}
+		<div class = "col-sm-12">
+			<center>
+				<p><a class="btn btn-primary btn-lg" href = "{% url 'indexArticle' %}" role="button"  id="homeButton"><span class="glyphicon glyphicon-home"></span></a></p>
+			</center>
+		</div>
+    </div> <!-- /container -->
+{% endblock %}
+</html>

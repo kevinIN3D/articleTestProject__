@@ -13,28 +13,13 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Article',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
-                ('article_title', models.CharField(verbose_name='Title: ', max_length=256)),
-                ('article_author', models.CharField(verbose_name='Author: ', max_length=128)),
+                ('id', models.AutoField(serialize=False, primary_key=True, auto_created=True, verbose_name='ID')),
+                ('article_title', models.CharField(max_length=256, verbose_name='Title: ')),
+                ('article_author', models.CharField(max_length=128, verbose_name='Author: ')),
                 ('article_pub_date', models.DateTimeField(verbose_name='Date published')),
-                ('article_category', models.CharField(verbose_name='Category: ', max_length=64)),
+                ('article_category', models.CharField(max_length=64, verbose_name='Category: ')),
+                ('article_hero_image', models.ImageField(upload_to='articles/images/heroimg/', default='articles/images/heroimg/Hero.jpg')),
                 ('article_body', models.TextField()),
-            ],
-        ),
-        migrations.CreateModel(
-            name='ReadNext',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
-                ('rn_nav_title', models.CharField(max_length=64)),
-                ('rn_title', models.CharField(max_length=256)),
-            ],
-        ),
-        migrations.CreateModel(
-            name='Sidenav',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
-                ('sidenav_nav_title', models.CharField(max_length=64)),
-                ('sidenav_title', models.CharField(max_length=256)),
             ],
         ),
     ]

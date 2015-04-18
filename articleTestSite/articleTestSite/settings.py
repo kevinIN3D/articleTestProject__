@@ -13,8 +13,10 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MEDIA_ROOT = '/GitHub/articleTestProject/articleTestSite/articles/static/articles/'
+MEDIA_URL = '/media/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -37,7 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'articles'
+    'articles',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -52,6 +54,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'articleTestSite.urls'
+
 
 TEMPLATES = [
     {
@@ -101,3 +104,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/articleTestProject/articleTestSite/articles/static'
+
+

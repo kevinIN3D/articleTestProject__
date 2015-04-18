@@ -10,9 +10,12 @@ class Article(models.Model):
     article_author = models.CharField("Author: ", max_length=128)
     article_pub_date = models.DateTimeField("Date published")
     article_category = models.CharField("Category: ", max_length=64)
-    #article_hero_image = ImageField(blank=True)
-    #article_optional_image = ImageField(blank=True)  #BLANK=TRUE makes optional
+    article_hero_image = models.ImageField(upload_to="media/heroimg/", default='')
+    article_optional_image = models.ImageField(upload_to="media/subimg/", blank=True, default='')
     article_body = models.TextField()
+
+
+
     # USE IF CANT GET ABOVE WORKING, SET TO AN ARBITRARILY LONG CHAR VALUE 
     # article_body = models.CharField(max_length=65536)
 
@@ -20,11 +23,15 @@ class Article(models.Model):
         return self.article_title
 
     def was_published_recently(self):
-        return self.article_pub_date >= timezone.now() - datetime.timedelta(days=9)
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.article_pub_date <= now
     was_published_recently.admin_order_field = 'article_pub_date'
     was_published_recently.boolean = True
     was_published_recently.short_description = 'Published recently?'
 
+
+"""
+#  DONT NEED THESE, INHERIT THE TITLE AND SO ON FROM THE ARTICLE ABOVE, JUST SEPERATE WITH DIVS
 class ReadNext(models.Model):
     rn_nav_title = models.CharField(max_length=128)
     rn_title = models.CharField(max_length=256)
@@ -39,3 +46,4 @@ class Sidenav(models.Model):
 
     def __str__(self):   
         return self.sidenav_title 
+"""

@@ -1,0 +1,73 @@
+#body{
+	
+}
+
+/*  Keep jumbotron and articleBodyContainer widths the same, this is where SASS/LESS would be handy */
+.jumbotron {
+	margin-bottom: 0px;
+	width: 120%;
+}
+
+#articleBodyContainer{
+	padding-top: 15px;
+	margin-top: -25px;
+	border-top: 2px dashed #DDD;
+	background: #FFF;
+	float: left;
+	width: 120%;
+}
+
+#articleTitleContainer{
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+#articleTitle h1{
+	font-family: 'Calibri', Helvetica, Serif;
+	font-weight: bold;
+	font-variant: small-caps;
+	font-size: 56px;
+	padding-top: 0px;
+	margin-top: 0px;
+}
+
+#articleHero img{
+	width: 75%;
+}
+
+
+#articleInfo p{
+	text-indent: 0px;
+	color: #AAA;
+}
+
+#articleContent p:first-child:first-letter {
+	float: left; 
+	font-size: 105px; 
+	line-height: 90px;
+	padding-top: 4px; 
+	padding-right: 4px; 
+	padding-left: 10px; 
+}
+
+#articleContent{
+	font-size: 18px;
+}
+
+#articleOptionalImg{
+	float: right;
+	width: auto;
+	margin-left: 15px;
+}
+
+#homeButton{
+	margin-top: 50px;
+	padding-top: 25px;
+	padding-bottom: 28px;
+	padding-right: 28px;
+	padding-left: 25px;
+	border-radius: 60px;
+	border: 3px #000 outset;
+	font-size: 48px;
+}
+
