@@ -10,10 +10,6 @@ from .models import Article #, ReadNext, Sidenav
 # Create your views here.
 class HomePage(TemplateView):
 	template_name = "articles/home.html"
-	def get_context_data(self):
-		context = super(HomePage, self).get_context_data()
-		context['latest_article_list'] = Article.objects.all()[:5]
-		return context
 
 
 class ArticleLanding(generic.ListView):
@@ -23,13 +19,14 @@ class ArticleLanding(generic.ListView):
 	def get_queryset(self):
 		return Article.objects.filter(article_pub_date__lte = timezone.now()).order_by('-article_pub_date')[:4]
 
+
 class ArticleView(generic.DetailView):
 	model = Article
 	template_name = 'articles/articlePage.html'
+	
 	def get_queryset(self):
 		"""  Excludes any articles that aren't published yet """
 		return Article.objects.filter(article_pub_date__lte=timezone.now())
-
 
 """
 #REFACTORED DOWN TO GENERIC VIEWS  -- TUTORIAL 4

@@ -1,0 +1,42 @@
+#body{
+	
+}
+
+#storyContainer #newsStory{
+	padding-top: 50px;
+}
+
+#storyContainer #newsStory h2{
+	font-family: 'Calibri', Helvetica, Serif;
+	font-variant: small-caps;
+	font-weight: bold;
+	font-size: 30px;
+	padding-top: 0px;
+	margin-top: 0px;
+	text-align: center;
+}
+
+#storyContainer #newsStory a{
+	text-decoration: none;
+	color: #3b5998;
+}
+
+#storyContainer #newsStory a:hover{
+	color: #0085af;
+}
+
+#storyContainer #newsStory a:active{
+	color: darkblue;
+}
+
+#storyContainer #newsStory img{
+	width: 500px;
+	height: 350px;
+}
+
+#storyContainer
+{
+}
+
+
+

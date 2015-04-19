@@ -25,7 +25,17 @@
 
 	<!-- Custom theme -->
     <link rel="stylesheet" type="text/css" href="/static/articles/style.css" />
+
+    {% block extrahead %}   
+    <!-- add content here specific to individual pages -->
+    {% endblock %}
+</head>
+
+<body>
 	<div id="navbarContainer">
+		{% block sidebarBlock %}
+		<!-- Page specific custom code here -->
+		{% endblock %}
 	    <div id="navHeaderImage">
 	        <img src="http://placehold.it/150x150">
 	    </div>        
@@ -41,12 +51,8 @@
 			{% endif %}
 		</div>
 	</div>
-    {% block extrahead %}   
-    <!-- add content here specific to individual pages -->
-    {% endblock %}
-</head>
 
-<body>
+
     <div class = "container" id = "pageContainer">
         {% block content %}
 			<!-- add content here specific to individual pages -->

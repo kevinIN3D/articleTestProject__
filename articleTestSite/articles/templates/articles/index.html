@@ -1,9 +1,30 @@
-{% if latest_article_list %}
-    <ul>
-    {% for article in latest_article_list %}
-        <li><a href="{% url 'showArticle' article.id %}">{{article.article_title}}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No articles available.</p>
-{% endif %}
+{% extends "articles/base.html" %}
+
+    {% block extrahead %}   
+        <title>Django News - Sports Section!</title>
+        <link rel="stylesheet" type="text/css" href="/static/articles/css/custom/indexStyle.css" />
+    {% endblock %}
+
+	{% block sidebarBlock %}
+	   <!-- Page specific custom code here -->
+	{% endblock %}
+
+    {% block content %}
+        <div id="storyContainer">
+            {% if latest_article_list %}
+                {% for article in latest_article_list %}
+                    <div class="col-md-6" id="newsStory">
+                        <a href="{% url 'showArticle' article.id %}">
+                            <center>
+                                <img class="img-thumbnail" src="{{ article.article_hero_image.url }}" />
+                                <h2>{{article.article_title}}</h2>
+                            </center>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No articles available.</p>
+            {% endif %}
+        </div>
+    {% endblock %}
+

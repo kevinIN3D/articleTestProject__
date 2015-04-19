@@ -15,7 +15,7 @@ import os
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MEDIA_ROOT = '/GitHub/articleTestProject/articleTestSite/articles/static/articles/'
+MEDIA_ROOT = 'C:/Users/kevIN3D/Documents/GitHub/articleTestProject/articleTestSite/articles/static/articles/'
 MEDIA_URL = '/media/'
 
 # Quick-start development settings - unsuitable for production
@@ -33,13 +33,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'articles',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'articles',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -103,7 +103,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+STATIC_ROOT = 'C:/Users/kevIN3D/Documents/GitHub/articleTestProject/articleTestSite/articles/'
 STATIC_URL = '/static/'
-STATIC_ROOT = '/articleTestProject/articleTestSite/articles/static'
 
 

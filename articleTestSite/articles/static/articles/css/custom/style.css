@@ -1,9 +1,53 @@
 body{
-	background: url(../../static/articles/images/graphy.png) repeat fixed;
+/*	background: url(../../../../static/articles/media/graphy.jpg) repeat fixed;  */
+	background-color: #EEE;
 	font-family: Calibri, 'Times New Roman', sans-serif;
 }
 
 
 #pageContainer{
-	
+	padding: 0;
+	margin: 0;
+	position: relative;
+	left: 300px;
+}
+
+#navbarContainer{
+	position: fixed;
+	width: 300px;
+	height: 100vh;
+	padding: 0px 0px;
+	background: #555;
+	font-size: 18px;
+}
+
+#navbarContainer #navContent{
+	position: relative;
+	left: -20px;
+	padding-top: 20px;
+	width: 100%;
+}
+
+#navbarContainer a{
+	text-decoration: none;
+	color: #FFF;
+}
+
+#navbarContainer a:hover{
+	text-decoration: none;
+	color: #CCC;
+}
+
+#navbarContainer a:active{
+	text-decoration: none;
+	color: Bisque;
+}
+
+#navbarContainer ul{
+	list-style-type: none;
+}
+
+#navbarContainer #navContent img{
+	width: 85%;
+	height: auto;
 }

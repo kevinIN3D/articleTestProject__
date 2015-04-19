@@ -1,0 +1,42 @@
+    {% block extrahead %}   
+        <title>Django News - Sports Section!</title>
+    {% endblock %}
+</head>
+
+<body>
+	<div id="navbarContainer">
+		{% block sidebarBlock %}
+		<!-- Page specific custom code here -->
+		{% endblock %}
+	    <div id="navHeaderImage">
+	        <img src="http://placehold.it/150x150">
+	    </div>        
+	    <div id="navContent">
+			{% if latest_article_list %}
+    			<ul>
+    			{% for article in latest_article_list %}
+        			<li><a href="{% url 'showArticle' article.id %}">{{article.article_title}}</a></li>
+    			{% endfor %}
+    			</ul>
+			{% else %}
+    				<p>No articles available.</p>
+			{% endif %}
+		</div>
+	</div>
+
+
+    <div class = "container" id = "pageContainer">
+        {% block content %}
+			<!-- add content here specific to individual pages -->
+        {% endblock %}
+   </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/static/articles/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+</body>
+</html>

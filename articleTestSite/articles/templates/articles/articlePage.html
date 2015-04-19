@@ -1,17 +1,18 @@
-<!-- GIVE ALL OBJECTS A SPECIFIC 'ID' HERE, WILL IMPLEMENT BOOTSTRAP AFTER ITS STYLED, THEN CONVERT IT INTO A GRID SYSTEM FOR RESPONSIVE.  EASYokNP!   -->
-<!DOCTYPE html>
-{% extends "articles/home.html" %}
+<!-- GIVE ALL OBJECTS A SPECIFIC 'ID' HERE, WILL IMPLEMENT BOOTSTRAP AFTER ITS STYLED, THEN CONVERT IT INTO A GRID SYSTEM FOR RESPONSIVE.  EASY!   -->
+{% extends "articles/base.html" %}
+
   {% block extrahead %}
-      
-  <head>
     <title>Django Sports - {{ article.article_title }}</title>
     <link rel="stylesheet" type="text/css" href="/static/articles/css/custom/articleStyle.css" />
-</head>
-
-
-{% endblock extrahead %}
+  {% endblock extrahead %}
     
   
+
+{% block sidebarBlock %}
+	<!-- page specific sidebar info -->
+	{{article.article_title}}
+{% endblock %}
+
 
 
 {% block content %}
@@ -51,4 +52,3 @@
 		</div>
     </div> <!-- /container -->
 {% endblock %}
-</html>

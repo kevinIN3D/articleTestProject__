@@ -1,6 +1,14 @@
 
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Django Test Article Website">
+    <meta name="author" content="Kevin Leegsma">
+    <link rel="icon" href="../../favicon.ico">
+    
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
@@ -15,41 +23,44 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-    <!-- Custom theme -->
-    <link rel="stylesheet" type="text/css" href="/static/articles/style.css" />
+  <!-- Custom theme -->
+    <link rel="stylesheet" type="text/css" href="/static/articles/css/custom/style.css" />
 
-    {% block extrahead %}   {% endblock %}
+    {% block extrahead %}   
+    <!-- add content here specific to individual pages -->
+    {% endblock %}
 </head>
 
 <body>
-    <div id="navbarContainer">
+  <div id="navbarContainer">
       <div id="navHeaderImage">
-          <img src="http://placehold.it/150x150">
+          <center><img src="http://placehold.it/300x150/000000/ffffff&text=Insert+Logo+Here"></center>
       </div>        
-      <div id="navContent">
-        {% if latest_article_list %}
+      {% block sidebarBlock %}
+        <!-- Page specific custom code here -->
+      {% endblock %}
+      <div class="col-sm-12" id="navContent">
+      {% if latest_article_list %}
           <ul>
-          {% for article in article_list %}
-              <li><a href="{% url 'showArticle' article.id %}"><img class="img-rounded" id="navContentImage" src="{{article.article_optional_image.url }}"/>{{article.article_title}}</a></li>
+          {% for article in latest_article_list %}
+              <center>
+                <img class="img-thumbnail" src="{{ article.article_thumbnail_optional.url }}" />
+                <li><a href="{% url 'showArticle' article.id %}">{{article.article_title}}</a></li>
+              </center>
           {% endfor %}
           </ul>
-        {% else %}
-          <p>Why no articles available.</p>
-        {% endif %}
-<!--    
-          
--->
-
-      </div>
+      {% else %}
+          <p>No articles available.</p>
+      {% endif %}
     </div>
+  </div>
+
 
     <div class = "container" id = "pageContainer">
         {% block content %}
+      <!-- add content here specific to individual pages -->
         {% endblock %}
-    </div>
-
-
-
+   </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -61,30 +72,4 @@
 </body>
 </html>
 
-<!--  USE NAVBAR CODE WHEN NEEDED IN BASE.HTML
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div>
-      </div>
-    </nav>
--->
