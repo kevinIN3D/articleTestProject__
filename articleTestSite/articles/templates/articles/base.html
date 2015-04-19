@@ -44,8 +44,10 @@
           <ul>
           {% for article in latest_article_list %}
               <center>
-                <img class="img-thumbnail" src="{{ article.article_thumbnail_optional.url }}" />
-                <li><a href="{% url 'showArticle' article.id %}">{{article.article_title}}</a></li>
+                <a href="{% url 'showArticle' article.id %}">
+                  <img class="img-thumbnail" id="thumbs" src="{{ article.article_thumbnail_optional.url }}" />
+                  <li>{{article.article_title}}</li>
+                </a>
               </center>
           {% endfor %}
           </ul>

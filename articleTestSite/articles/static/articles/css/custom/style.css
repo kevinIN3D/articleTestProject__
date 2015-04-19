@@ -31,6 +31,7 @@ body{
 #navbarContainer a{
 	text-decoration: none;
 	color: #FFF;
+	line-height: 18px;
 }
 
 #navbarContainer a:hover{
@@ -50,4 +51,6 @@ body{
 #navbarContainer #navContent img{
 	width: 85%;
 	height: auto;
+	margin-top: 13px;
+	margin-bottom: 3px;
 }
