@@ -1,72 +1,73 @@
+<!--  includes the base.html file  -->
+{% extends "articles/base.html" %}
 
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Django Test Article Website">
-    <meta name="author" content="Kevin Leegsma">
-    <link rel="icon" href="../../favicon.ico">
-    
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-	<!-- Custom theme -->
-    <link rel="stylesheet" type="text/css" href="/static/articles/style.css" />
-
+    <!--   adds content to 'extrahead' in base.html  -->
     {% block extrahead %}   
-    <!-- add content here specific to individual pages -->
+        <title>Django News - Sports Section!</title>
+        <link rel="stylesheet" type="text/css" href="/static/articles/css/custom/indexStyle.css" />
     {% endblock %}
-</head>
 
-<body>
-	<div id="navbarContainer">
-		{% block sidebarBlock %}
-		<!-- Page specific custom code here -->
-		{% endblock %}
-	    <div id="navHeaderImage">
-	        <img src="http://placehold.it/150x150">
-	    </div>        
-	    <div id="navContent">
-			{% if latest_article_list %}
-	    		<ul>
-	    		{% for article in latest_article_list %}
-	        		<li><a href="{% url 'showArticle' article.id %}">{{article.article_title}}</a></li>
-	    		{% endfor %}
-	    		</ul>
-			{% else %}
-	    		<p>No articles available.</p>
-			{% endif %}
-		</div>
-	</div>
+    <!--  Deprecated, can be removed  -->
+	{% block sidebarBlock %}
+	   <!-- Page specific custom code here -->
+	{% endblock %}
 
-
-    <div class = "container" id = "pageContainer">
-        {% block content %}
-			<!-- add content here specific to individual pages -->
-        {% endblock %}
-   </div>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="/static/articles/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
-</body>
-</html>
-
+    <!--  Adds content to 'content' block in base.html  -->
+    {% block content %}
+        <!--  Article Index title  -->
+        <center><h1 id="sportsHeader">Sports <span class="fa fa-futbol-o"></span> Report<small>part of DJANGO NEWS <b class="fa fa-newspaper-o"></b></small></h1></center>
+        <div class="container" id="randomStory">
+            <!-- if random_article doesnt exist, doesn't try to execute that code, instead throws an error 'No Article For You'  -->
+            {% if random_article %}
+                <div class = "col-sm-12" id="randArtTitle">
+                <!--  Gets the context dictionary from 'random_article' and as such is able to return 'article_title, article_author, article_pub_date'  -->
+                    <h1>{{random_article.article_title}}</h1>
+                    <p><small>&emsp;Author: <i>{{random_article.article_author}}</i></small>
+                    <small>Published: <i>{{random_article.article_pub_date}}</i></small></p>
+                </div>
+                <div id="randArtHero">
+                <!--  Gets the context dictionary from 'random_article' and as such is able to return 'article_hero_image' as well as navigate to next link  -->
+                    <a href="{% url 'showArticle' random_article.id %}">
+                    <img class="img-rounded" src="{{ random_article.article_hero_image.url }}" />
+                    </a>
+                </div>
+                <div id="randArtContent">
+                <!--  Gets a snippet of the article body to use as a preview  -->
+                <!-- ::::'linebreaks' saves HTML \n characters to keep formatting consistent:::: -->
+                <!-- ::::'truncatechars:1650' displays the first 1650 chars of the article_body, then adds an '...' and truncates the rest:::: -->
+                    <p>{{random_article.article_body|linebreaks|truncatechars:1650}}..<a href="{% url 'showArticle' random_article.id %}"><small>Continue Reading</small></a></p>
+                </div>
+            {% else %}
+                No random article for you!
+            {% endif %}
+        </div>
+        <div id="storyContainer"> 
+        <!-- if latest_article_list doesnt exist, doesn't try to execute that code, instead throws an error 'No Article Available'  -->
+            {% if latest_article_list %}
+                <ol>
+                <!--  creates an ordered list (needs to be ordered to enum) containing all articles in latest_article_list  -->
+                {% for article in latest_article_list %}
+                    <div class="col-sm-1">
+                        <li>
+                            <!-- this chunk is used to increment our list counter and enum our article, use this because its hard -->
+                            <!-- to order by PK as it may not keep ordered by 'date' if articles were added at different times -->
+                        </li> 
+                    </div>
+                    <div class="col-sm-11" id="newsStory">
+                    <!--  Gets the context dictionary from 'article' and as such is able to return -->
+                    <!--  'article_thumbnail_optional', 'article_title' and wraps them all to navigate to next link  -->
+                            <a href="{% url 'showArticle' article.id %}">
+                                <h2>{{article.article_title}}</h2>
+                                <img class="img-thumbnail" src="{{ article.article_thumbnail_optional.url }}" />
+                            </a>
+                        <p id="articlePreview">{{article.article_body | truncatechars:700}}....<a href="{% url 'showArticle' article.id %}"><small>Read More</small></a></p>
+                        <h6>Published: {{article.article_pub_date}}</h6>
+                    </div>
+                {% endfor %}
+                </ol>
+            {% else %}
+                <p>No articles available.</p>
+            {% endif %}
+        </div>
+    {% endblock %}
 

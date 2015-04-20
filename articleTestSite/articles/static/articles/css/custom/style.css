@@ -500,27 +500,29 @@ body{
 	/*  MODIFY THE 'readNext' container div  */
 	/*****************************************/
 	#readNext{
-		left: 50px;	
+		left: 30px;	
+		width: 80%;
+		padding: 0;
 	}
 
 	#readNext #prevButton{
-		left: -40px;
-		top: 95px;
-		font-size: 30px;
+		left: -21px;
+		top: 90px;
+		font-size: 22px;
 	}
 
 	#readNext #nextButton{
-		right: -35px;
-		top: 95px;
-		font-size: 30px;
+		right: -18px;
+		top: 90px;
+		font-size: 22px;
 	}
 
 	#readNext img{
-		width: 175px;
+		width: 150px;
 	}
 
 	#readNext h4{
-		font-size: 12px;
+		font-size: 13px;
 	}
 
 	#readNext #readNextExtraSmall{  display: visible;  }

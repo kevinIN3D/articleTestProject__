@@ -85,7 +85,7 @@
           <center>
             <a href="{% url 'showArticle' article.id %}">
               <img class="img-thumbnail" id="thumbFooter" src="{{ article.article_thumbnail_optional.url }}" /><br>
-              <h4>{{ article.article_title }}</h4>
+              <h4>{{ article.article_title | truncatechars:32}}</h4>
             </a>
           </center>
         </div>
