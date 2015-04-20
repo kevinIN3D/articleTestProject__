@@ -5,10 +5,13 @@
 /*  Keep jumbotron and articleBodyContainer widths the same, this is where SASS/LESS would be handy */
 .jumbotron {
 	margin-bottom: 0px;
-	width: 120%;
+	width: 110%;
 	background: #CCC;
 }
 
+	/************************************/
+	/*  MODIFY THE 'ArticlePage' title  */
+	/************************************/
 #articleBodyContainer{
 	padding-top: 15px;
 	padding-bottom: 20px;
@@ -16,7 +19,7 @@
 	border-top: 8px dashed #CCC;
 	background: #FFF;  
 	float: left;
-	width: 120%;
+	width: 110%;
 }
 
 #articleTitleContainer{
@@ -37,7 +40,9 @@
 	width: 70%;
 }
 
-
+	/***********************************/
+	/*  MODIFY THE 'ArticlePage' Body  */
+	/***********************************/
 #articleInfo p{
 	text-indent: 0px;
 	color: #AAA;
@@ -63,7 +68,8 @@
 }
 
 #homeButton{
-	margin-top: 50px;
+	margin-top: 30px;
+	margin-bottom: 20px;
 	padding-top: 25px;
 	padding-bottom: 28px;
 	padding-right: 28px;
@@ -73,3 +79,359 @@
 	font-size: 48px;
 }
 
+
+
+
+
+@media all and (max-width: 1600px){
+	#pageContainer{
+		width: 1025px;
+	}
+
+		/*  Keep jumbotron and articleBodyContainer widths the same, this is where SASS/LESS would be handy */
+	.jumbotron {
+		width: 100%;
+	}
+
+		/************************************/
+		/*  MODIFY THE 'ArticlePage' title  */
+		/************************************/
+	#articleBodyContainer{
+		padding-top: 15px;
+		padding-bottom: 20px;
+		margin-top: -25px;
+		border-top: 8px dashed #CCC;
+		background: #FFF;  
+		float: left;
+		width: 100%;
+	}
+
+	#articleTitle h1{
+		font-size: 52px;
+	}
+
+	#articleHero img{
+		width: 70%;
+	}
+
+		/***********************************/
+		/*  MODIFY THE 'ArticlePage' Body  */
+		/***********************************/
+	#articleContent{
+		font-size: 16px;
+	}
+
+	#articleOptionalImg{
+		width: 500px;
+		margin-left: 15px;
+	}
+
+	#homeButton{
+		padding-top: 25px;
+		padding-bottom: 28px;
+		padding-right: 28px;
+		padding-left: 25px;
+		font-size: 48px;
+	}
+}
+
+
+
+
+@media all and (max-width: 1300px){
+	#pageContainer{
+		width: 900px;
+		left: 175px;
+	}
+
+			/*  Keep jumbotron and articleBodyContainer widths the same, this is where SASS/LESS would be handy */
+	.jumbotron {
+		width: 100%;
+		padding-top: 30px;
+		padding-bottom: 55px;
+	}
+
+		/************************************/
+		/*  MODIFY THE 'ArticlePage' title  */
+		/************************************/
+	#articleBodyContainer{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin-top: -25px;
+		border-top: 8px dashed #CCC;
+		width: 100%;
+	}
+
+	#articleTitle h1{
+		font-size: 48px;
+	}
+
+	#articleHero img{
+		width: 80%;
+	}
+
+		/***********************************/
+		/*  MODIFY THE 'ArticlePage' Body  */
+		/***********************************/
+	#articleContent{
+		font-size: 15px;
+	}
+
+	#articleOptionalImg{
+		width: 375px;
+		margin-left: 15px;
+	}
+
+	#homeButton{
+		padding-top: 25px;
+		padding-bottom: 28px;
+		padding-right: 28px;
+		padding-left: 25px;
+		font-size: 48px;
+	}
+}
+
+
+
+@media all and (max-width: 1100px){
+	#pageContainer{
+		width: 735px;
+		left: 150px;
+	}
+
+	/*  Keep jumbotron and articleBodyContainer widths the same, this is where SASS/LESS would be handy */
+	.jumbotron {
+		width: 100%;
+		padding-top: 30px;
+		padding-bottom: 55px;
+	}
+
+		/************************************/
+		/*  MODIFY THE 'ArticlePage' title  */
+		/************************************/
+	#articleBodyContainer{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin-top: -25px;
+		border-top: 8px dashed #CCC;
+		width: 100%;
+	}
+
+	#articleTitle h1{
+		font-size: 40px;
+	}
+
+	#articleHero img{
+		width: 80%;
+	}
+
+		/***********************************/
+		/*  MODIFY THE 'ArticlePage' Body  */
+		/***********************************/
+	#articleContent{
+		font-size: 15px;
+	}
+
+	#articleOptionalImg{
+		width: 300px;
+		margin-left: 15px;
+	}
+
+	#homeButton{
+		padding-top: 17px;
+		padding-bottom: 21px;
+		padding-right: 21px;
+		padding-left: 17px;
+		font-size: 32px;
+	}
+}
+
+
+@media all and (max-width: 900px){
+	#pageContainer{
+		width: 530px;
+		left: 150px;
+	}
+
+	/*  Keep jumbotron and articleBodyContainer widths the same, this is where SASS/LESS would be handy */
+	.jumbotron {
+		width: 100%;
+		padding-top: 30px;
+		padding-bottom: 55px;
+	}
+
+		/************************************/
+		/*  MODIFY THE 'ArticlePage' title  */
+		/************************************/
+	#articleBodyContainer{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin-top: -25px;
+		border-top: 8px dashed #CCC;
+		width: 100%;
+	}
+
+	#articleTitle h1{
+		font-size: 32px;
+	}
+
+	#articleHero img{
+		width: 100%;
+	}
+
+		/***********************************/
+		/*  MODIFY THE 'ArticlePage' Body  */
+		/***********************************/
+	#articleContent{
+		font-size: 14px;
+	}
+
+	#articleOptionalImg{
+		width: 400px;
+		margin-left: 15px;
+		display: block;
+		float: none;
+		margin: 0 auto;
+	}
+
+	#homeButton{
+		padding-top: 17px;
+		padding-bottom: 21px;
+		padding-right: 21px;
+		padding-left: 17px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-size: 32px;
+	}
+}
+
+
+@media all and (max-width: 700px){
+	#pageContainer{
+		width: 100%;
+		background: #DDD;
+		left: 0px;
+	}
+
+	/*  Keep jumbotron and articleBodyContainer widths the same, this is where SASS/LESS would be handy */
+	.jumbotron {
+		width: 100%;
+		padding-top: 15px;
+		padding-bottom: 50px;
+	}
+
+		/************************************/
+		/*  MODIFY THE 'ArticlePage' title  */
+		/************************************/
+	#articleBodyContainer{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin-top: -25px;
+		border-top: 4px dashed #CCC;
+		width: 100%;
+	}
+
+	#articleTitle h1{
+		font-size: 32px;
+	}
+
+	#articleHero img{
+		width: 100%;
+	}
+
+		/***********************************/
+		/*  MODIFY THE 'ArticlePage' Body  */
+		/***********************************/
+	#articleInfo p{
+		font-size: 12px;
+	}
+
+	#articleContent{
+		font-size: 13px;
+	}
+
+	#articleOptionalImg{
+		width: 450px;
+		position: relative;
+		left: -10px;
+		display: block;
+		float: none;
+		margin: 0 auto;
+	}
+
+	#homeButton{
+		padding-top: 17px;
+		padding-bottom: 21px;
+		padding-right: 21px;
+		padding-left: 17px;
+		margin-top: 15px;
+		margin-bottom: 0px;
+		font-size: 32px;
+	}
+}
+
+
+@media all and (max-width: 500px){
+	#pageContainer{
+		width: 100%;
+		background: #DDD;
+		left: 0px;
+		overflow-x: hidden;
+	}
+
+	/*  Keep jumbotron and articleBodyContainer widths the same, this is where SASS/LESS would be handy */
+	.jumbotron {
+		width: 100%;
+		padding-top: 15px;
+		padding-bottom: 50px;
+	}
+
+		/************************************/
+		/*  MODIFY THE 'ArticlePage' title  */
+		/************************************/
+	#articleBodyContainer{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin-top: -25px;
+		border-top: 4px dashed #CCC;
+		width: 100%;
+	}
+
+	#articleTitle h1{
+		font-size: 32px;
+	}
+
+	#articleHero img{
+		width: 100%;
+	}
+
+		/***********************************/
+		/*  MODIFY THE 'ArticlePage' Body  */
+		/***********************************/
+	#articleInfo p{
+		font-size: 10px;
+	}
+
+	#articleContent{
+		font-size: 13px;
+	}
+
+	#articleOptionalImg{
+		width: 250px;
+		position: relative;
+		left: -10px;
+		display: block;
+		float: none;
+		margin: 0 auto;
+	}
+
+	#homeButton{
+		padding-top: 12px;
+		padding-bottom: 16px;
+		padding-right: 14px;
+		padding-left: 12px;
+		margin-top: 15px;
+		margin-bottom: 0px;
+		font-size: 24px;
+	}
+}

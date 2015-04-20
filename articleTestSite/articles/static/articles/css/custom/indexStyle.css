@@ -1,10 +1,78 @@
-#body{
-	
+#readNext{
+	margin-top: 30px;
+	padding-top: 40px;
+	border-top: 1px solid #CCC;
+}
+/***************************************/
+/*  MODIFY THE 'Sports Section' title  */
+/***************************************/
+#sportsHeader{
+	padding-left: 125px;
+	font-size: 64px;
+	font-variant: small-caps;
+	font-weight: bold;
+	font-family: "Times New Roman", Helvetica, Serif;
+	padding-bottom: 30px;
 }
 
+#sportsHeader span{
+	font-size: 70px;
+	position: relative;
+	top: 8px;
+	background: #FFF;
+	border-radius: 40px;	/* creates a fake background behind the soccerball by rounding the radius of the 'box' its contained in way down */
+}
+
+#sportsHeader small{
+	font-size: 18px;
+	color: #BBB;
+	position: relative;
+	top: 20px;
+	left: -58px;
+}
+
+
+/*****************************************/
+/*  MODIFY THE 'Random Article' section  */
+/*****************************************/
+#randomStory{
+	padding: 25px 75px;
+	padding-top: 10px;
+	border-top: 3px double #000;
+	border-bottom: 3px double #000;
+	border-right: 3px double #000;
+	background: #FFF;
+	z-index: 100;
+}
+
+#randomStory h1{
+	font-size: 40px;
+	font-weight: bold;
+}
+
+#randomStory #randArtTitle small{
+	position: relative;
+	top: -10px;
+	float: right;
+}
+
+#randomStory #randArtHero{
+	width: 100%;
+	height: 425px;
+	overflow: hidden;
+}
+
+#randomStory #randArtHero img{
+	width: 100%;
+	position: relative;
+	top: -75px;
+}
+/***************************************/
+/*  MODIFY THE 'Article List' section  */
+/***************************************/
 #storyContainer #newsStory{
-	padding-top: 50px;
-	padding-left: 50px;
+	padding-top: 30px;
+	padding-left: 0px;
 }
 
 #storyContainer #newsStory h2{
@@ -14,30 +82,596 @@
 	font-size: 30px;
 	padding-top: 0px;
 	margin-top: 0px;
-	text-align: center;
 }
 
-#storyContainer #newsStory a{
-	text-decoration: none;
-	color: #3b5998;
+#storyContainer #newsStory h6{
+	font-family: 'Calibri', Helvetica, Serif;
+	color: #AAA;
+	font-size: 11px;
+	padding-top: 3px;
+	padding-left: 6px;
 }
 
-#storyContainer #newsStory a:hover{
-	color: #0085af;
+#storyContainer li{
+	font-family: 'Calibri', Helvetica, Serif;
+	font-weight: bold;
+	font-size: 20px;
+	color: #777;
+	list-style-position: inside;
+	border: 3px #777 solid;
+	border-radius: 30px;
+	width: 40px;
+	margin-left: 0px;
+	padding-left: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	position: relative;
+	top: 111px;
 }
 
-#storyContainer #newsStory a:active{
-	color: darkblue;
-}
+#storyContainer #newsStory a{  text-decoration: none;  color: #3b5998;  }
+#storyContainer #newsStory a:hover{  color: #0085af;  }
+#storyContainer #newsStory a:active{  color: darkblue;  }
+
+#storyContainer #newsStory small{  color: #888;  }
+#storyContainer #newsStory small:hover{  color: lightblue;  }
+#storyContainer #newsStory small:active{  color: blue;  }
 
 #storyContainer #newsStory img{
-	width: 500px;
-	height: 350px;
+	width: 200px;
+	height: auto;
+	float: left;
+	margin-right: 30px;
 }
 
-#storyContainer
-{
+#storyContainer #newsStory p{
+padding-top: 6px;
 }
 
 
 
+
+@media all and (max-width: 1600px){
+	#pageContainer{
+		width: 1025px;
+	}
+
+	/***************************************/
+	/*  MODIFY THE 'Sports Section' title  */
+	/***************************************/
+	#sportsHeader{
+		padding-left: 50px;
+		font-size: 64px;
+	}
+
+	#sportsHeader span{
+		font-size: 70px;
+	}
+
+	#sportsHeader small{
+		font-size: 18px;
+	}
+
+
+	/*****************************************/
+	/*  MODIFY THE 'Random Article' section  */
+	/*****************************************/
+	#randomStory{
+		padding: 25px 50px;
+		padding-top: 20px;
+		margin-left: 0;
+		width: 1050px;
+	}
+
+	#randomStory h1{
+		font-size: 40px;
+	}
+
+	#randomStory #randArtTitle small{
+		font-size: auto;
+		top: -10px;
+	}
+
+	#randomStory #randArtHero{
+		width: 100%;
+		height: 425px;
+		overflow: hidden;
+	}
+
+	#randomStory #randArtHero img{
+		top: -75px;
+	}
+	/***************************************/
+	/*  MODIFY THE 'Article List' section  */
+	/***************************************/
+	#storyContainer #newsStory h2{
+		font-size: 30px;
+	}
+
+	#storyContainer #newsStory h6{
+		font-size: 11px;
+	}
+
+	#storyContainer li{
+		font-size: 20px;
+		padding-left: 10px;
+		top: 111px;
+	}
+
+	#storyContainer #newsStory img{
+		width: 200px;
+	}
+
+	#storyContainer #newsStory p{
+		padding-top: 6px;
+	}
+}
+
+
+
+
+@media all and (max-width: 1300px){
+	#pageContainer{
+		width: 900px;
+		left: 175px;
+	}
+
+	/***************************************/
+	/*  MODIFY THE 'Sports Section' title  */
+	/***************************************/
+	#sportsHeader{
+		padding-left: 0px;
+		font-size: 56px;
+	}
+
+	#sportsHeader span{
+		font-size: 64px;
+	}
+
+	#sportsHeader small{
+		font-size: 14px;
+	}
+
+
+	/*****************************************/
+	/*  MODIFY THE 'Random Article' section  */
+	/*****************************************/
+	#randomStory{
+		padding: 25px 15px;
+		padding-top: 20px;
+		z-index: 100;
+		margin-left: 0;
+		position: relative;
+		width: 910px;
+	}
+
+	#randomStory h1{
+		font-size: 40px;
+	}
+
+	#randomStory #randArtTitle small{
+		font-size: auto;
+		top: -10px;
+	}
+
+	#randomStory #randArtHero{
+		width: 100%;
+		height: 425px;
+		overflow: hidden;
+	}
+
+	#randomStory #randArtHero img{
+		top: -75px;
+	}
+
+	/***************************************/
+	/*  MODIFY THE 'Article List' section  */
+	/***************************************/
+	#storyContainer #newsStory{
+		width: 770px;
+		left: -40px;
+	}
+
+	#storyContainer li{
+		position: relative;
+		left: -30px;
+	}
+
+	#storyContainer #newsStory h2{
+		font-size: 30px;
+	}
+
+	#storyContainer #newsStory h6{
+		font-size: 11px;
+	}
+
+	#storyContainer li{
+		font-size: 20px;
+		padding-left: 10px;
+		top: 111px;
+	}
+
+	#storyContainer #newsStory img{
+		width: 150px;
+	}
+
+	#storyContainer #newsStory p{
+		padding-top: 6px;
+	}
+}
+
+
+
+@media all and (max-width: 1100px){
+	#pageContainer{
+		width: 735px;
+		left: 150px;
+	}
+
+	/***************************************/
+	/*  MODIFY THE 'Sports Section' title  */
+	/***************************************/
+	#sportsHeader{
+		padding-left: 0px;
+		font-size: 56px;
+	}
+
+	#sportsHeader span{
+		font-size: 62px;
+	}
+
+	#sportsHeader small{
+		font-size: 14px;
+	}
+
+
+	/*****************************************/
+	/*  MODIFY THE 'Random Article' section  */
+	/*****************************************/
+	#randomStory{
+		padding: 25px 50px;
+		padding-top: 20px;
+		margin-left: 0;
+		width: 720px;
+	}
+
+	#randomStory h1{
+		font-size: 32px;
+	}
+
+	#randomStory #randArtTitle small{
+		font-size: 11px;
+		top: -10px;
+	}
+
+	#randomStory #randArtHero{
+		width: 100%;
+		height: 300px;
+		overflow: hidden;
+	}
+
+	#randomStory #randArtHero img{
+		top: -40px;
+	}
+	/***************************************/
+	/*  MODIFY THE 'Article List' section  */
+	/***************************************/
+	#storyContainer #newsStory{
+		left: 25px;
+		width: 665px;
+		padding-top: 0px;
+	}
+	
+	#storyContainer #newsStory h2{
+		font-size: 25px;
+	}
+
+	#storyContainer #newsStory h6{
+		font-size: 11px;
+		position: relative;
+		top: -16px;
+	}
+
+	#storyContainer li{
+		top: 100px;
+		left: -45px;
+	}
+
+	#storyContainer #newsStory img{
+		width: 150px;
+	}
+
+	#storyContainer #newsStory p{
+		padding-top: 0px;
+		position: relative;
+		top: -8px;
+		font-size: 13px;
+	}
+}
+
+
+@media all and (max-width: 900px){
+		#pageContainer{
+		width: 530px;
+		left: 150px;
+	}
+
+	/***************************************/
+	/*  MODIFY THE 'Sports Section' title  */
+	/***************************************/
+	#sportsHeader{
+		position: relative;
+		left: -60px;
+		font-size: 44px;
+	}
+
+	#sportsHeader span{
+		font-size: 50px;
+		top: 4px;
+	}
+
+	#sportsHeader small{
+		font-size: 12px;
+	}
+
+
+	/*****************************************/
+	/*  MODIFY THE 'Random Article' section  */
+	/*****************************************/
+	#randomStory{
+		padding: 25px 15px;
+		padding-top: 20px;
+		margin-left: 0;
+		width: 530px;
+	}
+
+	#randomStory h1{
+		font-size: 32px;
+	}
+
+	#randomStory #randArtTitle small{
+		font-size: 11px;
+		top: -10px;
+	}
+
+	#randomStory #randArtHero{
+		width: 100%;
+		height: 225px;
+		overflow: hidden;
+	}
+
+	#randomStory #randArtHero img{
+		top: -30px;
+	}
+	/***************************************/
+	/*  MODIFY THE 'Article List' section  */
+	/***************************************/
+	#storyContainer #newsStory{
+		left: 25px;
+		width: 460px;
+		padding-top: 0px;
+	}
+	
+	#storyContainer #newsStory h2{
+		font-size: 20px;
+	}
+
+	#storyContainer #newsStory h6{
+		font-size: 10px;
+		position: relative;
+		top: -16px;
+	}
+
+	#storyContainer li{
+		top: 140px;
+		left: -45px;
+	}
+
+	#storyContainer #newsStory img{
+		width: 140px;
+		margin-right: 8px;
+	}
+
+	#storyContainer #newsStory p{
+		padding-top: 0px;
+		position: relative;
+		top: -8px;
+		font-size: 13px;
+	}
+}
+
+
+@media all and (max-width: 700px){
+	#pageContainer{
+		width: 100%;
+		background: #DDD;
+		left: 0px;
+	}
+
+	/***************************************/
+	/*  MODIFY THE 'Sports Section' title  */
+	/***************************************/
+	#sportsHeader{
+		position: relative;
+		left: 20px;
+		width: 100%;
+		font-size: 42px;
+	}
+
+	#sportsHeader span{
+		font-size: 42px;
+		top: 2px;
+	}
+
+	#sportsHeader small{
+		font-size: 11px;
+		color: #777;
+		left: -50;
+	}
+
+
+	/*****************************************/
+	/*  MODIFY THE 'Random Article' section  */
+	/*****************************************/
+	#randomStory{
+		padding: 25px 15px;
+		padding-top: 20px;
+		margin-left: 0;
+		border-left: 3px double #000;
+		width: 100%;
+	}
+
+	#randomStory h1{
+		font-size: 32px;
+	}
+
+	#randomStory #randArtTitle small{
+		font-size: 11px;
+		top: -10px;
+	}
+
+	#randomStory #randArtHero{
+		width: 100%;
+		height: 225px;
+		overflow: hidden;
+	}
+
+	#randomStory #randArtHero img{
+		top: -30px;
+	}
+	/***************************************/
+	/*  MODIFY THE 'Article List' section  */
+	/***************************************/
+	#storyContainer #newsStory{
+		left: 25px;
+		width: 95%;
+		padding-top: 0px;
+	}
+	
+	#storyContainer #newsStory h2{
+		font-size: 20px;
+	}
+
+	#storyContainer #newsStory h6{
+		font-size: 10px;
+		position: relative;
+		top: -16px;
+		color: #888;
+	}
+
+	#storyContainer li{
+		top: 140px;
+		left: -45px;
+	}
+
+	#storyContainer #newsStory img{
+		width: 140px;
+		margin-right: 8px;
+	}
+
+	#storyContainer #newsStory p{
+		padding-top: 0px;
+		position: relative;
+		top: -8px;
+		font-size: 13px;
+	}
+}
+
+
+@media all and (max-width: 500px){
+	#pageContainer{
+		width: 100%;
+		background: #DDD;
+		left: 0px;
+		overflow-x: hidden;
+	}
+
+	/***************************************/
+	/*  MODIFY THE 'Sports Section' title  */
+	/***************************************/
+	#sportsHeader{
+		position: relative;
+		left: 17px;
+		width: 130%;
+		font-size: 30px;
+	}
+
+	#sportsHeader span{
+		font-size: 26px;
+		top: 0px;
+	}
+
+	#sportsHeader small{
+		font-size: 10px;
+		color: #777;
+		left: -180px;
+	}
+
+
+	/*****************************************/
+	/*  MODIFY THE 'Random Article' section  */
+	/*****************************************/
+	#randomStory{
+		padding: 10px 15px;
+		padding-top: 6px;
+		margin-left: 0;
+		border-left: 3px double #000;
+		width: 100%;
+	}
+
+	#randomStory h1{
+		font-size: 32px;
+	}
+
+	#randomStory #randArtTitle small{
+		font-size: 11px;
+		top: -10px;
+	}
+
+	#randomStory #randArtHero{
+		width: 100%;
+		height: 135px;
+		overflow: hidden;
+	}
+
+	#randomStory #randArtHero img{
+		top: 0px;
+	}
+	/***************************************/
+	/*  MODIFY THE 'Article List' section  */
+	/***************************************/
+	#storyContainer #newsStory{
+		left: 25px;
+		width: 92%;
+		padding-top: 0px;
+	}
+	
+	#storyContainer #newsStory h2{
+		font-size: 20px;
+	}
+
+	#storyContainer #newsStory h6{
+		font-size: 10px;
+		position: relative;
+		top: -16px;
+		color: #888;
+	}
+
+	#storyContainer li{
+		top: 50px;
+		left: -40px;
+	}
+
+	#storyContainer #newsStory img{
+		width: 200px;
+		margin-right: 8px;
+		margin-bottom: 8px;
+	}
+
+	#storyContainer #newsStory p{
+		padding-top: 0px;
+		position: relative;
+		top: -4px;
+		font-size: 12px;
+	}
+}

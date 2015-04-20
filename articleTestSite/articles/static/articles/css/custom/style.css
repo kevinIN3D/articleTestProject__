@@ -4,14 +4,9 @@ body{
 	font-family: Calibri, 'Times New Roman', sans-serif;
 }
 
-
-#pageContainer{
-	padding: 0;
-	margin: 0;
-	position: relative;
-	left: 300px;
-}
-
+/**************************************/
+/*  MODIFY THE 'navbarContainer' div  */
+/**************************************/
 #navbarContainer{
 	position: fixed;
 	width: 300px;
@@ -19,6 +14,9 @@ body{
 	padding: 0px 0px;
 	background: #555;
 	font-size: 18px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 2;
 }
 
 #navbarContainer #navContent{
@@ -34,8 +32,8 @@ body{
 	line-height: 18px;
 }
 
-#navbarContainer a:hover{
-	text-decoration: none;
+#navbarContainer a:hover{	
+	text-decoration: none;										
 	color: #CCC;
 }
 
@@ -48,9 +46,485 @@ body{
 	list-style-type: none;
 }
 
-#navbarContainer #navContent img{
+#navbarContainer #navHeaderImage #navLogo{
+	width: 300px;
+	height: 150px;
+	background: url(http://placehold.it/300x150/000000/ffffff&text=Logo+Here);
+}
+
+#navbarContainer #thumbs{
 	width: 85%;
 	height: auto;
 	margin-top: 13px;
 	margin-bottom: 3px;
+}
+
+
+/************************************/
+/*  MODIFY THE 'pageContainer' div  */
+/************************************/
+#pageContainer{
+	padding: 0;
+	margin: 0;
+	position: relative;
+	left: 300px;
+}
+
+
+/*****************************************/
+/*  MODIFY THE 'readNext' container div  */
+/*****************************************/
+#readNext{
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin: 0;
+	margin-top: 20px;
+	position: relative;
+	left: 365px;	
+}
+
+#readNext #prevButton{
+	left: -50px;
+	top: 50px;
+	width: auto;
+	color: #000;
+	font-size: 65px;
+	background: none;
+}
+
+#readNext #nextButton{
+	right: -50px;
+	top: 50px;
+	width: auto;
+	color: #000;
+	font-size: 65px;
+	background: none;
+}
+
+#readNext img{
+	width: 240px;
+	height: auto;
+}
+
+#readNext h4{
+	font-size: 15px;
+	font-variant: small-caps;
+}
+
+#readNext a{  text-decoration: none;  color: #3b5998;  }
+#readNext a:hover{  color: #999;  }
+#readNext a:active{  color: darkblue;  }
+
+/* only one may be active at a time */
+#readNext #readNextExtraSmall{  display: none;  }
+#readNext #readNextSmall{  display: none;  }
+#readNext #readNextLarge{  display: visible;  }
+
+
+
+
+@media all and (max-width: 1600px){
+	/**************************************/
+	/*  MODIFY THE 'navbarContainer' div  */
+	/**************************************/
+	#navbarContainer{
+		width: 225px;
+		font-size: 15px;
+	}
+
+	#navbarContainer #navContent{
+		position: relative;
+		left: -25px;
+	}
+
+	#navbarContainer a{
+		line-height: 15px;
+	}
+
+	#navbarContainer #navContent img{
+		width: 85%;
+	}
+
+	#navbarContainer #navHeaderImage #navLogo{
+	width: 225px;
+	height: 110px;
+	background: url(http://placehold.it/225x110/000000/ffffff&text=Logo+Here);
+	}	
+
+	/************************************/
+	/*  MODIFY THE 'pageContainer' div  */
+	/************************************/
+	#pageContainer{
+		left: 225px;
+	}
+
+
+	/*****************************************/
+	/*  MODIFY THE 'readNext' container div  */
+	/*****************************************/
+	#readNext{
+		left: 275px;	
+		width: 70%;
+	}
+
+	#readNext #prevButton{
+		left: -45px;
+		top: 50px;
+		font-size: 65px;
+	}
+
+	#readNext #nextButton{
+		right: -45px;
+		top: 50px;
+		font-size: 65px;
+	}
+
+	#readNext img{
+		width: 200px;
+	}
+
+	#readNext h4{
+		font-size: 15px;
+	}
+
+	#readNext #readNextExtraSmall{  display: none;  }
+	#readNext #readNextSmall{  display: none;  }
+	#readNext #readNextLarge{  display: visible;  }
+}
+
+
+
+@media all and (max-width: 1300px){
+	/**************************************/
+	/*  MODIFY THE 'navbarContainer' div  */
+	/**************************************/
+	#navbarContainer{
+		width: 175px;
+		font-size: 14px;
+	}
+
+	#navbarContainer #navContent{
+		position: relative;
+		left: -47px;
+		width: 130%;
+	}
+
+	#navbarContainer a{
+		line-height: 15px;
+	}
+
+	#navbarContainer #navHeaderImage #navLogo{
+	width: 175px;
+	height: 95px;
+	background: url(http://placehold.it/175x95/000000/ffffff&text=Logo+Here);
+	}	
+
+	/************************************/
+	/*  MODIFY THE 'pageContainer' div  */
+	/************************************/
+	#pageContainer{
+	}
+
+
+	/*****************************************/
+	/*  MODIFY THE 'readNext' container div  */
+	/*****************************************/
+	#readNext{
+		left: 255px;	
+	}
+
+	#readNext #prevButton{
+		left: -60px;
+		top: 40px;
+		font-size: 50px;
+	}
+
+	#readNext #nextButton{
+		right: -55px;
+		top: 40px;
+		font-size: 50px;
+	}
+
+	#readNext img{
+		width: 240px;
+	}
+
+	#readNext h4{
+		font-size: 15px;
+	}
+
+	#readNext #readNextExtraSmall{  display: none;  }
+	#readNext #readNextSmall{  display: none;  }
+	#readNext #readNextLarge{  display: visible;  }
+}
+
+
+
+
+
+@media all and (max-width: 1100px){
+	/**************************************/
+	/*  MODIFY THE 'navbarContainer' div  */
+	/**************************************/
+	#navbarContainer{
+		width: 150px;
+		font-size: 12px;
+	}
+
+	#navbarContainer #navContent{
+		position: relative;
+		left: -50px;
+		width: 130%;
+	}
+
+	#navbarContainer a{
+		line-height: 12px;
+	}
+
+	#navbarContainer #navHeaderImage #navLogo{
+	width: 150px;
+	height: 95px;
+	background: url(http://placehold.it/150x95/000000/ffffff&text=Logo+Here);
+	}	
+
+	/************************************/
+	/*  MODIFY THE 'pageContainer' div  */
+	/************************************/
+	#pageContainer{
+	}
+
+
+	/*****************************************/
+	/*  MODIFY THE 'readNext' container div  */
+	/*****************************************/
+	#readNext{
+		left: 215px;	
+	}
+
+	#readNext #prevButton{
+		left: -50px;
+		top: 35px;
+		font-size: 35px;
+	}
+
+	#readNext #nextButton{
+		right: -50px;
+		top: 35px;
+		font-size: 35px;
+	}
+
+	#readNext img{
+		width: 240px;
+	}
+
+	#readNext h4{
+		font-size: 15px;
+		position: relative;
+		top: -8px;
+	}
+
+	#readNext #readNextExtraSmall{  display: none;  }
+	#readNext #readNextSmall{  display: visible;  }
+	#readNext #readNextLarge{  display: none;  }
+
+}
+
+@media all and (max-width: 995px){
+		/*****************************************/
+	/*  MODIFY THE 'readNext' container div  */
+	/*****************************************/
+	#readNext{
+		left: 205px;	
+	}
+
+	#readNext #prevButton{
+		left: -50px;
+		top: 165px;
+		font-size: 35px;
+	}
+
+	#readNext #nextButton{
+		right: -50px;
+		top: 165px;
+		font-size: 35px;
+	}
+
+	#readNext img{
+		width: 240px;
+	}
+
+	#readNext h4{
+		font-size: 15px;
+		position: relative;
+		top: -8px;
+	}
+	}
+
+
+@media all and (max-width: 900px){
+	/**************************************/
+	/*  MODIFY THE 'navbarContainer' div  */
+	/**************************************/
+	#navbarContainer{
+		width: 150px;
+		font-size: 12px;
+	}
+
+	#navbarContainer #navContent{
+		position: relative;
+		left: -50px;
+		width: 130%;
+	}
+
+	#navbarContainer a{
+		line-height: 12px;
+	}
+
+	#navbarContainer #navHeaderImage #navLogo{
+	width: 150px;
+	height: 95px;
+	background: url(http://placehold.it/150x95/000000/ffffff&text=Logo+Here);
+	}	
+
+	/************************************/
+	/*  MODIFY THE 'pageContainer' div  */
+	/************************************/
+	#pageContainer{
+		left: 150px;
+	}
+
+
+	/*****************************************/
+	/*  MODIFY THE 'readNext' container div  */
+	/*****************************************/
+	#readNext{
+		left: 180px;	
+	}
+
+	#readNext #prevButton{
+		left: -30px;
+		top: 150px;
+		font-size: 35px;
+	}
+
+	#readNext #nextButton{
+		right: -30px;
+		top: 150px;
+		font-size: 35px;
+	}
+
+	#readNext img{
+		width: 200px;
+	}
+
+	#readNext h4{
+		font-size: 15px;
+	}
+
+	#readNext #readNextExtraSmall{  display: none;  }
+	#readNext #readNextSmall{  display: visible;  }
+	#readNext #readNextLarge{  display: none;  }
+
+}
+
+
+
+@media all and (max-width: 700px){
+	/**************************************/
+	/*  MODIFY THE 'navbarContainer' div  */
+	/**************************************/
+	#navbarContainer{
+		display: none;
+	}
+
+	/************************************/
+	/*  MODIFY THE 'pageContainer' div  */
+	/************************************/
+	#pageContainer{
+		left: 0px;
+	}
+
+
+	/*****************************************/
+	/*  MODIFY THE 'readNext' container div  */
+	/*****************************************/
+	#readNext{
+		left: 75px;	
+	}
+
+	#readNext #prevButton{
+		left: -50px;
+		top: 115px;
+		font-size: 50px;
+	}
+
+	#readNext #nextButton{
+		right: -45px;
+		top: 115px;
+		font-size: 50px;
+	}
+
+	#readNext img{
+		width: 175px;
+	}
+
+	#readNext h4{
+		font-size: 13px;
+	}
+
+	#readNext #readNextExtraSmall{  display: visible;  }
+	#readNext #readNextSmall{  display: none;  }
+	#readNext #readNextLarge{  display: none;  }
+
+}
+
+
+
+@media all and (max-width: 500px){
+	/**************************************/
+	/*  MODIFY THE 'navbarContainer' div  */
+	/**************************************/
+	#navbarContainer{
+		display: none;
+	}
+
+	/************************************/
+	/*  MODIFY THE 'pageContainer' div  */
+	/************************************/
+	#pageContainer{
+		left: 0px;
+	}
+
+
+	/*****************************************/
+	/*  MODIFY THE 'readNext' container div  */
+	/*****************************************/
+	#readNext{
+		left: 50px;	
+	}
+
+	#readNext #prevButton{
+		left: -40px;
+		top: 95px;
+		font-size: 30px;
+	}
+
+	#readNext #nextButton{
+		right: -35px;
+		top: 95px;
+		font-size: 30px;
+	}
+
+	#readNext img{
+		width: 175px;
+	}
+
+	#readNext h4{
+		font-size: 12px;
+	}
+
+	#readNext #readNextExtraSmall{  display: visible;  }
+	#readNext #readNextSmall{  display: none;  }
+	#readNext #readNextLarge{  display: none;  }
+
 }

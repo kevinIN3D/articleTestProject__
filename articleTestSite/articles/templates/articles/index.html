@@ -1,27 +1,70 @@
+<!--  includes the base.html file  -->
 {% extends "articles/base.html" %}
 
+    <!--   adds content to 'extrahead' in base.html  -->
     {% block extrahead %}   
         <title>Django News - Sports Section!</title>
         <link rel="stylesheet" type="text/css" href="/static/articles/css/custom/indexStyle.css" />
     {% endblock %}
 
+    <!--  Deprecated, can be removed  -->
 	{% block sidebarBlock %}
 	   <!-- Page specific custom code here -->
 	{% endblock %}
 
+    <!--  Adds content to 'content' block in base.html  -->
     {% block content %}
-        <div id="storyContainer">
+        <!--  Article Index title  -->
+        <center><h1 id="sportsHeader">Sports <span class="fa fa-futbol-o"></span> Report<small>part of DJANGO NEWS <b class="fa fa-newspaper-o"></b></small></h1></center>
+        <div class="container" id="randomStory">
+            <!-- if random_article doesnt exist, doesn't try to execute that code, instead throws an error 'No Article For You'  -->
+            {% if random_article %}
+                <div class = "col-sm-12" id="randArtTitle">
+                <!--  Gets the context dictionary from 'random_article' and as such is able to return 'article_title, article_author, article_pub_date'  -->
+                    <h1>{{random_article.article_title}}</h1>
+                    <p><small>&emsp;Author: <i>{{random_article.article_author}}</i></small>
+                    <small>Published: <i>{{random_article.article_pub_date}}</i></small></p>
+                </div>
+                <div id="randArtHero">
+                <!--  Gets the context dictionary from 'random_article' and as such is able to return 'article_hero_image' as well as navigate to next link  -->
+                    <a href="{% url 'showArticle' random_article.id %}">
+                    <img class="img-rounded" src="{{ random_article.article_hero_image.url }}" />
+                    </a>
+                </div>
+                <div id="randArtContent">
+                <!--  Gets a snippet of the article body to use as a preview  -->
+                <!-- ::::'linebreaks' saves HTML \n characters to keep formatting consistent:::: -->
+                <!-- ::::'truncatechars:1650' displays the first 1650 chars of the article_body, then adds an '...' and truncates the rest:::: -->
+                    <p>{{random_article.article_body|linebreaks|truncatechars:1650}}..<a href="{% url 'showArticle' random_article.id %}"><small>Continue Reading</small></a></p>
+                </div>
+            {% else %}
+                No random article for you!
+            {% endif %}
+        </div>
+        <div id="storyContainer"> 
+        <!-- if latest_article_list doesnt exist, doesn't try to execute that code, instead throws an error 'No Article Available'  -->
             {% if latest_article_list %}
+                <ol>
+                <!--  creates an ordered list (needs to be ordered to enum) containing all articles in latest_article_list  -->
                 {% for article in latest_article_list %}
-                    <div class="col-md-6" id="newsStory">
-                        <a href="{% url 'showArticle' article.id %}">
-                            <center>
-                                <img class="img-thumbnail" src="{{ article.article_hero_image.url }}" />
+                    <div class="col-sm-1">
+                        <li>
+                            <!-- this chunk is used to increment our list counter and enum our article, use this because its hard -->
+                            <!-- to order by PK as it may not keep ordered by 'date' if articles were added at different times -->
+                        </li> 
+                    </div>
+                    <div class="col-sm-11" id="newsStory">
+                    <!--  Gets the context dictionary from 'article' and as such is able to return -->
+                    <!--  'article_thumbnail_optional', 'article_title' and wraps them all to navigate to next link  -->
+                            <a href="{% url 'showArticle' article.id %}">
                                 <h2>{{article.article_title}}</h2>
-                            </center>
-                        </a>
+                                <img class="img-thumbnail" src="{{ article.article_thumbnail_optional.url }}" />
+                            </a>
+                        <p id="articlePreview">{{article.article_body | truncatechars:700}}....<a href="{% url 'showArticle' article.id %}"><small>Read More</small></a></p>
+                        <h6>Published: {{article.article_pub_date}}</h6>
                     </div>
                 {% endfor %}
+                </ol>
             {% else %}
                 <p>No articles available.</p>
             {% endif %}

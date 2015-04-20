@@ -23,7 +23,7 @@ def test_was_published_recently_with_old_article(self):
 
 def test_was_published_recently_with_recent_article(self):
     """  was_published_recently() should return True for questions whose pub_date is within the last day. """
-    time = timezone.now() - datetime.timedelta(hours=1)
+    time = timezone.now() - datetime.timedelta(days=5)
     recent_question = Article(article_pub_date=time)
     self.assertEqual(recent_question.was_published_recently(), True)
 

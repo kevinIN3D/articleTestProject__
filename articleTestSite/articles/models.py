@@ -25,20 +25,3 @@ class Article(models.Model):
     was_published_recently.boolean = True
     was_published_recently.short_description = 'Published recently?'
 
-"""
-#  DONT NEED THESE, INHERIT THE TITLE AND SO ON FROM THE ARTICLE ABOVE, JUST SEPERATE WITH DIVS
-class ReadNext(models.Model):
-    rn_nav_title = models.CharField(max_length=128)
-    rn_title = models.CharField(max_length=256)
-    #rn_image = ImageField(blank=True)
-    
-    def __str__(self):   
-        return self.rn_nav_title 
-
-class Sidenav(models.Model):
-    sidenav_title = models.CharField(max_length=256)
-    #sidenav_image = ImageField(blank=True)
-
-    def __str__(self):   
-        return self.sidenav_title 
-"""
