@@ -14,9 +14,9 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))
+print(BASE_DIR)
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MEDIA_ROOT = 'C:/Users/kevIN3D/Documents/GitHub/articleTestProject/articleTestSite/articles/static/articles/'
-MEDIA_URL = '/media/'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -102,8 +102,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+MEDIA_ROOT = os.path.join(BASE_DIR, 'articles/static/articles/media/')
+MEDIA_URL = '/media/'
 
-STATIC_ROOT = 'C:/Users/kevIN3D/Documents/GitHub/articleTestProject/articleTestSite/articles/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'articles/static/')
 STATIC_URL = '/static/'
-
+print(MEDIA_ROOT)
 
